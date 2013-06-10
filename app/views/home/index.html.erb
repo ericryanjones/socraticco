@@ -1,0 +1,73 @@
+<div class="navbar navbar-fixed-top navbar-inverse">
+  <div class="navbar-inner">
+    <div class="container">
+      <a class="brand" href="#">
+        Socratic.Co
+      </a>
+      <ul class="nav">
+        <li>
+          <a href="#">
+            Home
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            About
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            Contact
+          </a>
+        </li>
+      </ul>
+      <form class="navbar-form pull-right" action="dashboard">
+        <input name="login" type="email" placeholder="Email" class="span2">
+        <input name="password" type="password" placeholder="Password" class="span2">
+        <button class="btn">
+          Sign in
+        </button>
+      </form>
+    </div>
+  </div>
+</div>
+<div class="container">
+  <div class="hero-unit">
+    <div>
+      <h1>Welcome to Socratic.Co!</h1>
+      <p>Here at Socratic.Co we are focused on connecting people with life experiences to those who wish to learn, grow and more.</p>
+      <h3>TESTING:</h3>
+      <% @users.each do |user| %>
+          <p>User: <%=link_to user.name, user %></p>
+      <% end %>
+    </div>
+    <a class="btn btn-primary" href="#">Learn more »</a>
+  </div>
+  <div class="row">
+    <div class="span4">
+      <div>
+        <h2>Find</h2>
+        <p>Are you ready to make a change in your life or business? We've got a growing number of coaches, mentors and others who are ready to help you on your journey.</p>
+      </div>
+      <a class="btn" href="#">View details »</a>
+    </div>
+    <div class="span4">
+      <div>
+        <h2>Register</h2>
+        <p>Are you a coach, a mentor, a trusted advisor or just someone with life experience who wishes to give back? Registering with our service will give you the tools and platform to ensure that you can either grow your business or share your life experience with those who can benefit.</p>
+      </div>
+      <a class="btn" href="#">View details »</a>
+    </div>
+    <div class="span4">
+      <div>
+        <h2>Explore</h2>
+        <p>Curious about what Socratic.Co is all about? Don't feel like jumping right in? No worries. Just create an account and then browse around to see all that we have to offer!</p>
+      </div>
+      <a class="btn" href="#">View details »</a>
+    </div>
+  </div>
+  <hr>
+  <div>
+    © Socratic.Co 2012
+  </div>
+</div>
