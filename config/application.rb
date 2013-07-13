@@ -58,5 +58,10 @@ module Socraticco
 
     # Version of your assets, change this if you want to expire all your assets
     config.assets.version = '1.0'
+
+    # Acts As Taggable Config
+    ActsAsTaggableOn.remove_unused_tags = true
+    ActsAsTaggableOn.force_lowercase = true
+    ActsAsTaggableOn.force_parameterize = true
   end
 end

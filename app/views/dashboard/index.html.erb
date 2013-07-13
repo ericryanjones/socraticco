@@ -1,0 +1,28 @@
+<h1>Personal Dashboard For <%= current_user.name %></h1>
+<div>Welcome to your personal dashboard! Here you can ask a new question, see responses from Guides, search for new guides and more!</div>
+<div class="row-fluid">
+  <div class="span4 well well-small">
+    <h2>Your Topics</h2>
+    <ul id="dashboardMyTopics">
+        <% @my_topics.each do |myTopic| %>
+          <li><%= link_to myTopic.topic, myTopic %></li>
+        <% end %>
+    </ul>
+  </div>
+  <div class="span4 well well-small">
+    <h2>Your Topics</h2>
+    <ul id="dashboardMyTopics">
+      <% @my_topics.each do |myTopic| %>
+          <li><%= myTopic.topic %></li>
+      <% end %>
+    </ul>
+  </div>
+  <div class="span4 well well-small">
+    <h2>Your Topics</h2>
+    <ul id="dashboardMyTopics">
+      <% @my_topics.each do |myTopic| %>
+          <li><%= myTopic.topic %></li>
+      <% end %>
+    </ul>
+  </div>
+</div>
