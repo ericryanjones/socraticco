@@ -44,7 +44,7 @@ class TopicsController < ApplicationController
     @topic = Topic.find(params[:id])
 
     @comments = @topic.comment_threads.order('created_at desc')
-    @new_comment = Comment.build_from(@topic, current_user, "")
+    @new_comment = Comment.build_from(@topic, current_user.id, "")
   end
 
 end
