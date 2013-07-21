@@ -2,9 +2,11 @@
 <div id="topicKeywordList">
   <%= @topic.keyword_list %>
 </div>
+<h2>Add to the Conversation:</h2>
+    <%= render :partial => 'comments/form', :locals => { :comment => @new_comment } %>
 <h2>Conversation</h2>
-No conversation started yet... how about getting the ball rolling?
-
-<h3>Add to the Conversation:</h3>
-<%= render :partial => 'comments/form', :locals => { :comment => @new_comment } %>
-<%= render :partial => 'comments/comment', :collection => @comments, :as => :comment %>
+    <% if @comments.count > 0 %>
+        <%= render :partial => 'comments/comment', :collection => @comments, :as => :comment %>
+    <% else %>
+        <p>No conversation started yet... how about getting the ball rolling?</p>
+    <% end %>
