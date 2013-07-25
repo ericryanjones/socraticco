@@ -9,6 +9,6 @@ class Topic < ActiveRecord::Base
 
   belongs_to :user
 
-  attr_accessible :is_private, :topic, :user_id, :keyword_list
+  attr_accessible :is_private, :topic, :user_id, :keyword_list, :detail
 
 end

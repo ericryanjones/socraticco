@@ -1,5 +1,6 @@
 <%= simple_form_for @topic do |f| %>
     <%= f.input :topic %>
+    <%= f.input :detail %>
     <%= f.input :is_private %>
     <%= f.input :keyword_list %>
     <%= f.input :user_id, as: :hidden, input_html: { value: current_user.id }%>

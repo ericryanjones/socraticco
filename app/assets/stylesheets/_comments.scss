@@ -2,8 +2,6 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-#topicKeywordList{ list-style: none; display: inline; font-style: italic;}
-.topicPoster{ text-align: right;}
-.topicDetail{font-size: 2em; line-height: 1em;}
+// this file is imported into the topics.css.scss file
 
-@import "comments";
+.commmentPostedAt{text-align: right; font-size: .75em;}

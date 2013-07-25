@@ -1,12 +1,18 @@
-<h1><%= @topic.topic %></h1>
+<div class="page-header">
+    <h1><%= @topic.topic %></h1>
+</div>
+<div class="topicDetail">
+    <%= @topic.detail %>
+</div>
+<div class="topicMetaData">
+  <div class="topicPoster">Posted by: <%= @topic.user.name %></div>
+</div>
 <div id="topicKeywordList">
   <%= @topic.keyword_list %>
 </div>
-<h2>Add to the Conversation:</h2>
+<div class="topicConversation">
+    <%= render :partial => 'comments/comment', :collection => @comments, :as => :comment %>
+</div>
+<div class="topicConversationForm">
     <%= render :partial => 'comments/form', :locals => { :comment => @new_comment } %>
-<h2>Conversation</h2>
-    <% if @comments.count > 0 %>
-        <%= render :partial => 'comments/comment', :collection => @comments, :as => :comment %>
-    <% else %>
-        <p>No conversation started yet... how about getting the ball rolling?</p>
-    <% end %>
+</div>
