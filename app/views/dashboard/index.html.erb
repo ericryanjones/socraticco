@@ -26,3 +26,24 @@
     </ul>
   </div>
 </div>
+<div class="row-fluid">
+  <div class="span12">
+    <div class="user-search-form">
+      <h3>Search for Users</h3>
+      <%= form_tag '', :method => :get do %>
+          <p>
+            <%= text_field_tag :search, params[:search] %>
+            <%= submit_tag "Search Near", :name => nil %>
+          </p>
+      <% end %>
+      <% if params[:search].present? %>
+      <h3>Nearby guides</h3>
+      <ul>
+        <% for guides in @users.nearbys(100) %>
+            <li><%= link_to guides.address, guides %> (<%= guides.distance.round(2) %> miles)</li>
+        <% end %>
+      </ul>
+      <% end %>s
+    </div>
+  </div>
+</div>

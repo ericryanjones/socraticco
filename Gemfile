@@ -4,6 +4,8 @@ gem 'rails', '3.2.13'
 gem 'mysql2'
 gem 'jquery-rails'
 gem 'acts_as_commentable_with_threading'
+gem 'geocoder'
+# gem 'carmen-rails'
 gem "bootstrap-sass", ">= 2.1.1.0"
 gem "devise", ">= 2.1.2"
 gem "cancan", ">= 1.6.8"
