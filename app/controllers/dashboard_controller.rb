@@ -5,9 +5,9 @@ class DashboardController < ApplicationController
     @my_topics = Topic.find_all_by_user_id(current_user.id)
 
     if params[:search].present?
-      @users = User.near(params[:search], 50, :order => :distance)
+      @user_search = User.near(params[:search], 50, :order => :distance)
     else
-      @users = User.new()
+      @user_search = NIL
     end
   end
 end

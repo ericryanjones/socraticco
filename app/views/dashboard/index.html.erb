@@ -38,12 +38,16 @@
       <% end %>
       <% if params[:search].present? %>
       <h3>Nearby guides</h3>
-      <ul>
-        <% for guides in @users.nearbys(100) %>
-            <li><%= link_to guides.address, guides %> (<%= guides.distance.round(2) %> miles)</li>
+      <ul class="guideSearchResults">
+        <% if @user_search.count() > 0 %>
+            <% for guides in @user_search %>
+                <li><%= link_to guides.address, guides %> (<%= guides.distance.round(2) %> miles)</li>
+            <% end %>
+        <% else %>
+            <li class="noneFound">Sorry <%= @user_search.count() %> guides could be found at this time.</li>
         <% end %>
       </ul>
-      <% end %>s
+      <% end %>
     </div>
   </div>
 </div>

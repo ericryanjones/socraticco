@@ -1,12 +1,12 @@
 class User < ActiveRecord::Base
   extend FriendlyId
-  friendly_id :name, use: :slugged
 
+  geocoded_by :address
+  friendly_id :name, use: :slugged
   rolify
   acts_as_tagger
   acts_as_taggable
   acts_as_taggable_on :interest
-  geocoded_by :address
 
   after_validation :geocode, :if => :address_changed?
 
