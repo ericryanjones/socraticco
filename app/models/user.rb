@@ -7,6 +7,7 @@ class User < ActiveRecord::Base
   acts_as_tagger
   acts_as_taggable
   acts_as_taggable_on :interest
+  acts_as_messageable :dependent => :destroy, :group_messages => true
 
   after_validation :geocode, :if => :address_changed?
 

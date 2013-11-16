@@ -1,0 +1,5 @@
+<h1>Messages</h1>
+<h2>Recieved Messages</h2>
+<div class="messagesOutbox">
+  <%= render :partial => 'messages/recieved', :collection => @messages, :as => :message %>
+</div>

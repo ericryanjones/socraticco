@@ -1,0 +1,10 @@
+<% if @messages.count > 0 %>
+    <div class="message" id="message-#{message.id}">
+      <hr>
+      <%= link_to "×", message_path(message), :method => :delete, :remote => true, :confirm => "Are you sure you want to remove this message?", :disable_with => "×", :class => 'close' %>
+      <h4 class="messageTopic"><%= message.topic %></h4>
+      <div class="messageBody"><%= message.body %></div>
+    </div>
+<% else %>
+    <div class="noMessages">No messages received.</div>
+<% end %>

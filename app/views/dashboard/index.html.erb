@@ -28,8 +28,14 @@
 </div>
 <div class="row-fluid">
   <div class="span12">
+    <% if @myNearGuides.count() > 0 %>
+        <h3>Guides within 15 miles of you:</h3>
+        <% for guides in @myNearGuides %>
+            <li><%= link_to guides.name, guides %> (<%= guides.distance.round(2) %> miles)</li>
+        <% end %>
+    <% end %>
     <div class="user-search-form">
-      <h3>Search for Users</h3>
+      <h3>Search for Guides</h3>
       <%= form_tag '', :method => :get do %>
           <p>
             <%= text_field_tag :search, params[:search] %>
@@ -37,16 +43,16 @@
           </p>
       <% end %>
       <% if params[:search].present? %>
-      <h3>Nearby guides</h3>
-      <ul class="guideSearchResults">
-        <% if @user_search.count() > 0 %>
-            <% for guides in @user_search %>
-                <li><%= link_to guides.address, guides %> (<%= guides.distance.round(2) %> miles)</li>
-            <% end %>
-        <% else %>
-            <li class="noneFound">Sorry <%= @user_search.count() %> guides could be found at this time.</li>
-        <% end %>
-      </ul>
+          <h3>Nearby guides</h3>
+              <ul class="guideSearchResults">
+                <% if @user_search.count() > 0 %>
+                    <% for guides in @user_search %>
+                        <li><%= link_to guides.name, guides %> (<%= guides.distance.round(2) %> miles)</li>
+                    <% end %>
+                <% else %>
+                    <li class="noneFound">Sorry <%= @user_search.count() %> guides could be found at this time.</li>
+                <% end %>
+              </ul>
       <% end %>
     </div>
   </div>

@@ -1,0 +1,6 @@
+<%= simple_form_for :message, :url => messages_path, :method => :post do |f| %>
+    <%= f.input :topic %>
+    <%= f.input :body %>
+    <%= f.input :to, as: :hidden, input_html: { value: @user.id }%>
+    <%= f.button :submit %>
+<% end %>

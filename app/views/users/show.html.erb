@@ -1,3 +1,6 @@
-<h3>User</h3>
+<h2>User</h2>
 <p>User: <%= @user.name %></p>
 <p>Email: <%= @user.email if @user.email %></p>
+<p>Address: <%= @user.address if @user.address %></p>
+<h3>Send Me A Message</h3>
+<%= render "users/form", :locals => { :message => @message } %>

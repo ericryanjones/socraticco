@@ -14,7 +14,8 @@ gem "simple_form", ">= 2.1.0"
 gem "country_select", "~> 1.1.3"
 gem "figaro", ">= 0.5.0"
 gem "acts-as-taggable-on", ">= 2.4.1"
-gem "friendly_id", "~> 4.0.9"
+gem "friendly_id", "~> 4.0.10.1"
+gem "acts-as-messageable", "~> 0.4.8"
 
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'

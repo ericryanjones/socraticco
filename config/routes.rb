@@ -8,6 +8,11 @@ Socraticco::Application.routes.draw do
 
   root :to => "home#index"
 
+  get "messages/recieved" => "messages#recieved", :as => :messages
+  get "messages/outbox" => "messages#outbox", :as => :messages
+  get "messages/outbox" => "messages#destroy", :as => :messages
+  get "topics/keywords" => "topics#keywords", :as => :keywords
+
   resources :users
 
   resources :topics
@@ -15,6 +20,6 @@ Socraticco::Application.routes.draw do
 
   resources :dashboard
   resources :tags
+  resources :messages
 
-  get "topics/keywords" => "topics#keywords", :as => :keywords
 end
