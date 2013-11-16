@@ -3,7 +3,12 @@ class MessagesController < ApplicationController
     @messages = current_user.received_messages
   end
 
-  def outbox
+  #inbox
+  def inbox
+    @messages = current_user.received_messages
+  end
+
+  def sent
     @messages = current_user.sent_messages
   end
 
@@ -11,6 +16,7 @@ class MessagesController < ApplicationController
     @message = current_user.messages.find(params[:id])
   end
 
+  #trash
   def destroy
     @message = current_user.messages.find(params[:id])
     if @message.destroy
