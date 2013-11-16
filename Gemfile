@@ -6,7 +6,7 @@ gem 'jquery-rails'
 gem 'acts_as_commentable_with_threading'
 gem 'geocoder'
 # gem 'carmen-rails'
-gem "bootstrap-sass", ">= 2.1.1.0"
+gem "bootstrap-sass", ">= 3.0.2.1"
 gem "devise", ">= 2.1.2"
 gem "cancan", ">= 1.6.8"
 gem "rolify", ">= 3.2.0"
